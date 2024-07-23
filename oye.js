@@ -1,22 +1,4 @@
-const urlInput = document.getElementById('url');
-        const maxRequestsInput = document.getElementById('maxRequests');
-        const parallelRequestsInput = document.getElementById('parallelRequests'); 
-        const startBtn = document.getElementById('startBtn');
-        const stopBtn = document.getElementById('stopBtn');
-        const successCount = document.getElementById('successCount');
-        const failureCount = document.getElementById('failureCount');
-        const requestLogs = document.getElementById('requestLogs');
-        const autoScrollCheckbox = document.getElementById('autoScroll'); 
-        const urlError = document.getElementById('urlError'); 
-
-        const targetUrl = "https://clownfish-app-f7unk.ondigitalocean.app/v2/tasks/claimAdsgramAdReward";
-        let isRunning = false;
-        let cancellationToken;
-
-        startBtn.addEventListener('click', startRequests);
-        stopBtn.addEventListener('click', stopRequests);
-
-        async function startRequests() {
+async function startRequests() {
             const url = urlInput.value.trim();
             const maxRequests = parseInt(maxRequestsInput.value);
             const parallelRequests = parseInt(parallelRequestsInput.value);
